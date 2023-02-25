@@ -1,0 +1,347 @@
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Jxereas/UI-Libraries/main/notification_gui_library.lua", true))()
+
+Notification.new("error", "Loading Gui!", "Loading Gui/Scripts/Tabs/Buttons") -- Args(<string> Type, <string> Heading, <string> Body, <boolean?> AutoRemoveNotif, <number?> AutoRemoveTime, <function?> OnCloseFunction)
+
+wait(3)
+
+Notification.new("success", "Done!", "Loaded Gui Successfully") -- Args(<string> Type, <string> Heading, <string> Body, <boolean?> AutoRemoveNotif, <number?> AutoRemoveTime, <function?> OnCloseFunction)
+
+wait(1)
+
+Notification.new("info", "Arceus X Gui", "Enjoy!!") -- Args(<string> Type, <string> Heading, <string> Body, <boolean?> AutoRemoveNotif, <number?> AutoRemoveTime, <function?> OnCloseFunction)
+
+local notif = Notification.new("success", "Success", "Success body message.")
+
+notif:changeHeading("New Heading") -- Args(<string> NewHeading)
+
+notif:changeBody("New Body") -- Args(<string> NewBody)
+
+notif:deleteTimeout(3) -- Args(<number> DeleteWaitTime)
+
+notif:delete()
+
+local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+
+local Window = Library.CreateLib("Arceus X Hub", "BloodTheme")
+
+local Tab1 = Window:NewTab("Scripts")
+
+local Tab1Section = Tab1:NewSection("Scripts")
+
+Tab1Section:NewButton("Fly", "Fly For Mobile", function()
+
+    loadstring(game:HttpGet("https://pastebin.com/raw/LkeHvxcs"))()
+
+end)
+
+Tab1Section:NewButton("Esp", "Esp Players", function()
+
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+
+	Title = "Arceus X Esp";	Text = "Enjoy!";
+
+	Icon = "rbxthumb://type=Asset&id=12597625347&w=150&h=150"})
+
+Duration = 5;
+
+ 
+
+    local color = BrickColor.new(255,0,0)
+
+local transparency = .8
+
+local Players = game:GetService("Players")
+
+local function _ESP(c)
+
+  repeat wait() until c.PrimaryPart ~= nil
+
+  for i,p in pairs(c:GetChildren()) do
+
+    if p.ClassName == "Part" or p.ClassName == "MeshPart" then
+
+      if p:FindFirstChild("shit") then p.shit:Destroy() end
+
+      local a = Instance.new("BoxHandleAdornment",p)
+
+      a.Name = "shit"
+
+      a.Size = p.Size
+
+      a.Color = color
+
+      a.Transparency = transparency
+
+      a.AlwaysOnTop = true    
+
+      a.Visible = true    
+
+      a.Adornee = p
+
+      a.ZIndex = true    
+
+    end
+
+  end
+
+end
+
+local function ESP()
+
+  for i,v in pairs(Players:GetChildren()) do
+
+    if v ~= game.Players.LocalPlayer then
+
+      if v.Character then
+
+        _ESP(v.Character)
+
+      end
+
+      v.CharacterAdded:Connect(function(chr)
+
+        _ESP(chr)
+
+      end)
+
+    end
+
+  end
+
+  Players.PlayerAdded:Connect(function(player)
+
+    player.CharacterAdded:Connect(function(chr)
+
+      _ESP(chr)
+
+    end)  
+
+  end)
+
+end
+
+ESP()
+
+end)
+
+Tab1Section:NewButton("Btools", "Gives You A Btools", function()
+
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+
+	Title = "Arceus X Btools";
+
+	Text = "Enjoy!";
+
+	Icon = "rbxthumb://type=Asset&id=12597625347&w=150&h=150"})
+
+Duration = 5;
+
+ 
+
+    --[[
+
+A distribution of https://wearedevs.net/scripts
+
+Last updated August 2, 2021
+
+Description: Gives your player the old system of building tools
+
+Instruction: Inject this script into any game using a Lua executor like JJSploit. 
+
+]]
+
+backpack = game:GetService("Players").LocalPlayer.Backpack
+
+hammer = Instance.new("HopperBin")
+
+hammer.Name = "Hammer"
+
+hammer.BinType = 4
+
+hammer.Parent = backpack
+
+cloneTool = Instance.new("HopperBin")
+
+cloneTool.Name = "Clone"
+
+cloneTool.BinType = 3
+
+cloneTool.Parent = backpack
+
+grabTool = Instance.new("HopperBin")
+
+grabTool.Name = "Grab"
+
+grabTool.BinType = 2
+
+grabTool.Parent = backpack
+
+end)
+
+Tab1Section:NewButton("Infinite Yield", "FE ADMIN", function()
+
+    defaultsettings = {
+
+	prefix = ';';
+
+	StayOpen = false;
+
+	keepIY = true;
+
+	logsEnabled = false;
+
+	jLogsEnabled = false;
+
+	aliases = {};
+
+	binds = {};
+
+	WayPoints = {};
+
+	PluginsTable = {};
+
+}
+
+defaults = game:GetService("HttpService"):JSONEncode(defaultsettings)
+
+writefile("IY_FE.iy",defaults)
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+
+end)
+
+Tab1Section:NewKeybind("Toggle UI","?",Enum.KeyCode.LeftControl,function()
+
+	Library:ToggleUI()
+
+end)
+
+local Tab2 = Window:NewTab("Home")
+
+local Tab2Section = Tab2:NewSection("SPDM Team")
+
+local Tab2Section = Tab2:NewSection("About Us")
+
+Tab2Section:NewButton("Tiahh", "?", function()
+
+    print("Tiahh :  Owner Of Arceus X")
+
+end)
+
+Tab2Section:NewButton("BlackMoMo", "ButtonInfo", function()
+
+    print("BlackMoMo : Dev Of Arceus X")
+
+end)
+
+local Tab3 = Window:NewTab("</>")
+
+local Tab3Section = Tab3:NewSection("Executor </>")
+
+Tab3Section:NewTextBox("Executor Arceus X ", "Good Executor", function(txt)
+
+Loadstring (txt)
+
+end)
+
+--Propertie--
+
+local ScreenGui = Instance.new("ScreenGui")
+
+local Frame = Instance.new("Frame")
+
+local TextButton = Instance.new("TextButton")
+
+local Frame2 = Instance.new("Frame")
+
+local TextButton2 = Instance.new("TextButton")
+
+ScreenGui.Parent = game.CoreGui
+
+Frame.Parent = ScreenGui
+
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame.BackgroundTransparency = 1
+
+Frame.Position = UDim2.new(0, 0, 0.30, 0)
+
+Frame.Size = UDim2.new(0, 90, 0, 40)
+
+Frame.Active = true
+
+Frame.Draggable = true
+
+TextButton.Parent = Frame
+
+TextButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton.BackgroundTransparency = 0.6
+
+TextButton.Size = UDim2.new(0, 90, 0, 40)
+
+TextButton.Font = Enum.Font.GothamBold
+
+TextButton.Text = "Arceus X"
+
+TextButton.TextColor3 = Color3.fromRGB(204, 0, 204)
+
+TextButton.TextSize = 22.000
+
+TextButton.MouseButton1Click:connect(function()
+
+Frame.Visible = false
+
+Frame2.Visible = true    
+
+local vim = game:service("VirtualInputManager")
+
+vim:SendKeyEvent(true, "LeftControl", false, game)
+
+end)
+
+Frame2.Parent = ScreenGui
+
+Frame2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame2.BackgroundTransparency = 1
+
+Frame2.Position = UDim2.new(0, 0, 0.30, 0)
+
+Frame2.Size = UDim2.new(0, 90, 0, 40)
+
+Frame2.Active = true
+
+Frame2.Draggable = true
+
+TextButton2.Parent = Frame2
+
+TextButton2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton2.BackgroundTransparency = 0.6
+
+TextButton2.Size = UDim2.new(0, 90, 0, 40)
+
+TextButton2.Font = Enum.Font.GothamBold
+
+TextButton2.Text = "Arceus X"
+
+TextButton2.TextColor3 = Color3.fromRGB(204, 0, 204)
+
+TextButton2.TextSize = 22.000
+
+TextButton2.MouseButton1Click:connect(function()
+
+    Frame2.Visible = false
+
+    Frame.Visible = true
+
+local vim = game:service("VirtualInputManager")
+
+vim:SendKeyEvent(true, "LeftControl", false, game)
+
+end)
+
+Frame.Parent.Active = true
+
+Frame.Parent.Draggable = true
